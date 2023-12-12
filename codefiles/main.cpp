@@ -155,9 +155,27 @@ int main(){
                 } 
               
               }
-              
+              //dealer draws if total is less than 16, stand on 17 or more
+              while(playerDealer.checkValue()<17){
+                  cout<<"\nthe dealer is drawing another card...";
+                  playerDealer.toHand((Deck1.draw()));
+                  cout<<"\nthe dealer drew the "<<(playerDealer.getCardI(playerDealer.getCardsNum()-1)).getName()<<" of "<<(playerDealer.getCardI(playerDealer.getCardsNum()-1)).getSuit()<<" with a value of "<<(playerDealer.getCardI(player1.getCardsNum()-1)).getVal()<<endl;
+              }
+              cout<<"\nThe value of your cards is "<<to_string(player1.checkValue())<<" and the value of the dealer's cards is " <<to_string(playerDealer.checkValue());
+              if (playerDealer.checkValue()>21){
+                  cout<<"\nThe dealer busted, you win!";
+              }
+              else if(player1.checkValue()<playerDealer.checkValue()){
+                  cout<<"\nThe dealer had a greater total than you... the dealer won.";
+              }
+              else if(player1.checkValue()>playerDealer.checkValue()){
+                  cout<<"\nYou had a greater total than the dealer... you won!";
+              }
+              else{
+                  cout<<"\nYou and the dealer had the same total... it's a tie.";
+              }
               while(invalid){
-                cout<<"do you want to continue playing?\n";
+                cout<<"\ndo you want to continue playing?\n";
                 cin>>continuePlaying;
                 if(continuePlaying=="Y"){
                     invalid=false;
@@ -172,13 +190,3 @@ int main(){
                 }
             }
             continue;
-            //check for bust
-          //end 
-          //dealer draws if total is less than 16, stand on 17 or more
-      //do you want to keep playing?
-        player1.setPlaying(false);
-            }
-        }
-    }
-
-
