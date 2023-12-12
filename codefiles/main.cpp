@@ -15,7 +15,7 @@ int main(){
     string p1Name="";
     string continuePlaying;
     string drawing;
-    bool invalid=true;
+    bool invalid;
   //create player1
     player player1;
     player1.setPlaying(true);
@@ -33,6 +33,9 @@ int main(){
     cout<<"Welcome to Blackjack "<<player1.getPlayerName()<<"... Good Luck.\n";
   //while loop to play game
     while(player1.getPlaying()){
+        invalid=true;
+        player1.resetCards();
+        playerDealer.resetCards();
       //instantiate new deck
         deck Deck1;
         Deck1.shuffle();
@@ -149,9 +152,10 @@ int main(){
                 else{
                     cout<<"invalid selection... please try again.";
                     continue;
-                }
+                } 
               
               }
+              
               while(invalid){
                 cout<<"do you want to continue playing?\n";
                 cin>>continuePlaying;
