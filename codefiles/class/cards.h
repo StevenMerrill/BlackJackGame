@@ -1,6 +1,6 @@
 #include <iostream>
 
-include namespace std;
+using namespace std;
 
 class card {
     public:
