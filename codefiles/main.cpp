@@ -11,14 +11,13 @@ using namespace std;
     // compares val and alt val
     // if unequal returns true
 
-int main()
-{
+int main(){
     string p1Name="";
   //create player1
-    player player1();
+    player player1;
     player1.setPlaying(true);
   //create playerDealer
-    player playerDealer();
+    player playerDealer;
     playerDealer.setPlaying(true);
   //set dealer name
     playerDealer.setName("Dealer");
@@ -32,13 +31,13 @@ int main()
   //while loop to play game
     while(player1.getPlaying()){
       //instantiate new deck
-        deck Deck1();
+        deck Deck1;
         Deck1.shuffle();
       //deal initial cards
       // for 2
         for(int i=0;i<2;i++){
           //deal player and check ace
-            player1.toHand(Deck1.draw());
+            player1.toHand((Deck1.draw()));
           //deal dealer and check ace
             playerDealer.toHand(Deck1.draw());
         }
@@ -61,6 +60,7 @@ int main()
           //end 
           //dealer draws if total is less than 16, stand on 17 or more
       //do you want to keep playing?
+      player1.setPlaying(false);
     }
       
 }
