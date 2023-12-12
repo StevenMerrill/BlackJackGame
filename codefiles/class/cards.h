@@ -10,6 +10,7 @@ class card {
         suit = csuit;
     }
     card(){
+        name = "null";
     }
     string getName() {
         return name;
