@@ -78,7 +78,8 @@ class player {
     void setCardI(int i, card toSet){
         playerCards[i]=toSet;
     }
-    void newGame(){card playerCards[11];
+    void newGame(){
+        fill(playerCards[0], playerCards[10], NULL);
     }
     protected:
     
