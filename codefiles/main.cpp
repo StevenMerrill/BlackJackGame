@@ -100,13 +100,15 @@ int main(){
             //player wins
       //elif dealer has blackjack and player does not
         else if(playerDealer.checkValue()==21){
-            cout<<"the dealer has drawn a blackjack and has won this hand. This is the end of the hand.";
+            cout<<"\nthe dealer has drawn a blackjack and has won this hand. This is the end of the hand.";
             while(invalid){
+                cout<<"do you want to continue playing?\n";
                 cin>>continuePlaying;
                 if(continuePlaying=="Y"){
                     invalid=false;
                 }
                 else if(continuePlaying=="N"){
+                    invalid=false;
                     player1.setPlaying(false);
                 }
                 else{
@@ -123,11 +125,22 @@ int main(){
             
           //while ask if player wants to draw
             bool wantDraw=true;
-            cout<<"Do you want to draw another card?(Y/N)"<<endl;
+            cout<<"\nDo you want to draw another card?(Y/N)"<<endl;
+            cin>>drawing;
             while(wantDraw){
-                cin>>drawing;
                 if(drawing=="Y"){
                     //deal player and check ace
+                    player1.toHand((Deck1.draw()));
+                    cout<<"You drew a "<<(player1.getCardI(player1.getCardsNum()-1)).getName()<<" of "<<(player1.getCardI(player1.getCardsNum()-1)).getSuit()<<" with a value of "<<(player1.getCardI(player1.getCardsNum()-1)).getVal()<<endl;
+                    cout<<"Your new value is "<<to_string(player1.checkValue())<<endl;
+                    if(player1.checkBust()){
+                        break;
+                    }
+                    cout<<"\nDo you want to draw another card?(Y/N)"<<endl;
+                    cin>>drawing;
+                    continue;
+                    
+                    
                 }
                 else if(drawing=="N"){
                     wantDraw=false;
@@ -138,7 +151,24 @@ int main(){
                     continue;
                 }
               
-              //check for bust
+              }
+              while(invalid){
+                cout<<"do you want to continue playing?\n";
+                cin>>continuePlaying;
+                if(continuePlaying=="Y"){
+                    invalid=false;
+                }
+                else if(continuePlaying=="N"){
+                    invalid=false;
+                    player1.setPlaying(false);
+                }
+                else{
+                    cout<<"invalid selection... please try again.";
+                    continue;
+                }
+            }
+            continue;
+            //check for bust
           //end 
           //dealer draws if total is less than 16, stand on 17 or more
       //do you want to keep playing?
@@ -146,4 +176,5 @@ int main(){
             }
         }
     }
-}
+
+
