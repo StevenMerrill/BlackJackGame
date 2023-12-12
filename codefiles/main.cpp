@@ -16,10 +16,10 @@ int main()
     string p1Name="";
   //create player1
     player player1();
-    player1.setPlaying(True);
+    player1.setPlaying(true);
   //create playerDealer
     player playerDealer();
-    playerDealer.setPlaying(True);
+    playerDealer.setPlaying(true);
   //set dealer name
     playerDealer.setName("Dealer");
   //ask name
@@ -41,6 +41,7 @@ int main()
             player1.toHand(Deck1.draw());
           //deal dealer and check ace
             playerDealer.toHand(Deck1.draw());
+        }
       //reveal player
         for(int i=0;i<2;i++){
            cout<< (player1.getCardI(i)).getName()<<" ";
@@ -60,5 +61,6 @@ int main()
           //end 
           //dealer draws if total is less than 16, stand on 17 or more
       //do you want to keep playing?
+    }
       
 }
