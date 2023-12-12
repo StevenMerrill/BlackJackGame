@@ -15,7 +15,7 @@ class deck{
             string nameList[13] = {"Ace","Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"};
             int altValList[13] = {11,2,3,4,5,6,7,8,9,10,10,10,10};
             int valList[13] = {1,2,3,4,5,6,7,8,9,10,10,10,10};
-            string suitList[4] = {"Hearts","Clubs","Spades","Diamond"};
+            string suitList[4] = {"Hearts","Clubs","Spades","Diamonds"};
             int count=0;
             //makes a 52 card deck
             for(int i=0;i<4;i++) {
