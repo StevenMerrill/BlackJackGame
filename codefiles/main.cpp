@@ -13,7 +13,14 @@ using namespace std;
 
 int main()
 {
+  //create player1
+  //create playerDealer
+  //set dealer name
+  //ask name
+  //set name
+  //welcome to blackjack
   //while loop to play game
+      //instantiate new deck
       //deal initial cards
       // for 2
           //deal player and check ace
@@ -33,5 +40,6 @@ int main()
               //check for bust
           //end 
           //dealer draws if total is less than 16, stand on 17 or more
+      //do you want to keep playing?
       
 }
