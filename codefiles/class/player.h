@@ -11,6 +11,11 @@ class player {
     string getPlayerName(){
         return pName;
     }
+
+    bool checkBust(bool ace) {
+        //needs to be made
+    }
+
     int getOrder(){
         return order;
     }
