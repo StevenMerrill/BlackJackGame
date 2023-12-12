@@ -60,10 +60,10 @@ class deck{
         }
 
     protected:
-        int size=52;
-        card cards[52];
-        card discardcards[52];
-        int discardSize = 0;
+        int size=52; //deck size
+        card cards[52]; //deck container
+        card discardcards[52]; //discard pile
+        int discardSize = 0; //discard pile size
 
         
     private:    
