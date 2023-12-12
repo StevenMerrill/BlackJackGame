@@ -72,11 +72,4 @@ class deck{
 
 
 
-int main()
-{
-    /*deck test;
-    test.shuffle();
-    for (int i=0; i<52; i++) {
-        cout<< (test.draw()).getName() <<endl;
-    }*/
-}
+
