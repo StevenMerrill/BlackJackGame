@@ -14,7 +14,8 @@ using namespace std;
 int main(){
     string p1Name="";
     string continuePlaying;
-    bool valid=false;
+    string drawing;
+    bool invalid=true;
   //create player1
     player player1;
     player1.setPlaying(true);
@@ -55,10 +56,10 @@ int main(){
         }
         cout<<endl;
         cout<<player1.getPlayerName()<<", the value of your cards is "<<to_string(player1.checkValue());
-      //reveal dealer second card
-      cout<<"\nThe dealer's second card is the "<<(playerDealer.getCardI(1)).getName()<<" of "<<(playerDealer.getCardI(1)).getSuit();
-      //if dealer has blackjack and player has balckjack
-        if(player1.checkValue==21&&playerDealer.checkValue==21){
+         //reveal dealer second card
+        cout<<"\nThe dealer's second card is the "<<(playerDealer.getCardI(1)).getName()<<" of "<<(playerDealer.getCardI(1)).getSuit();
+        //if dealer has blackjack and player has balckjack
+        if(player1.checkValue()==21&&playerDealer.checkValue()==21){
                 cout<<"You both drew Blackjack and have tied. This is the end of the hand.";
             while(invalid){
                 cout<<"Do you want to play again?(Y/N)"<<endl;
@@ -75,19 +76,74 @@ int main(){
                 }
             }
             continue;
-            //tie
+        }//tie
       //elif player has blackjack and dealer does not
+        else if(player1.checkValue()==21){
+            cout<<"You drew a blackjack and have won this hand. This is the end of the hand.";
+            while(invalid){
+                cout<<"Do you want to play again?(Y/N)"<<endl;
+                cin>>continuePlaying;
+                if(continuePlaying=="Y"){
+                    invalid=false;
+                }
+                else if(continuePlaying=="N"){
+                    invalid=false;
+                    player1.setPlaying(false);
+                }
+                else{
+                    cout<<"invalid selection... please try again.";
+                }
+            }
+            continue;
+        }
+                
             //player wins
       //elif dealer has blackjack and player does not
+        else if(playerDealer.checkValue()==21){
+            cout<<"the dealer has drawn a blackjack and has won this hand. This is the end of the hand.";
+            while(invalid){
+                cin>>continuePlaying;
+                if(continuePlaying=="Y"){
+                    invalid=false;
+                }
+                else if(continuePlaying=="N"){
+                    player1.setPlaying(false);
+                }
+                else{
+                    cout<<"invalid selection... please try again.";
+                    continue;
+                }
+            }
+            continue;
+        }
+            
             //dealer wins
       //else
+        else{
+            
           //while ask if player wants to draw
-              //deal player and check ace
+            bool wantDraw=true;
+            cout<<"Do you want to draw another card?(Y/N)"<<endl;
+            while(wantDraw){
+                cin>>drawing;
+                if(drawing=="Y"){
+                    //deal player and check ace
+                }
+                else if(drawing=="N"){
+                    wantDraw=false;
+                    continue;
+                }
+                else{
+                    cout<<"invalid selection... please try again.";
+                    continue;
+                }
+              
               //check for bust
           //end 
           //dealer draws if total is less than 16, stand on 17 or more
       //do you want to keep playing?
-      player1.setPlaying(false);
+        player1.setPlaying(false);
+            }
+        }
     }
-      
 }
