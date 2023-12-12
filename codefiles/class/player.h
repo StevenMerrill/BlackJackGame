@@ -13,7 +13,9 @@ class player {
     }
 
     bool checkBust(bool ace) {
-        //needs to be made
+        //logic for ace
+
+        //compare cards to 21
     }
 
     int getOrder(){
