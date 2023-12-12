@@ -13,20 +13,39 @@ using namespace std;
 
 int main()
 {
+    string p1Name="";
   //create player1
+    player player1();
+    player1.setPlaying(True);
   //create playerDealer
+    player playerDealer();
+    playerDealer.setPlaying(True);
   //set dealer name
+    playerDealer.setName("Dealer");
   //ask name
+    cout<<"What is your name?\n";
+    cin>>p1Name;
   //set name
+    player1.setName(p1Name);
   //welcome to blackjack
+    cout<<"Welcome to Blackjack...\n";
   //while loop to play game
+    while(player1.getPlaying()){
       //instantiate new deck
+        deck Deck1();
+        Deck1.shuffle();
       //deal initial cards
       // for 2
+        for(int i=0;i<2;i++){
           //deal player and check ace
+            player1.toHand(Deck1.draw());
           //deal dealer and check ace
+            playerDealer.toHand(Deck1.draw());
       //reveal player
-    
+        for(int i=0;i<2;i++){
+           cout<< (player1.getCardI(i)).getName()<<" ";
+        }
+        cout<<endl;
       //reveal dealer second card
       //if dealer has blackjack and player has balckjack
             //tie
