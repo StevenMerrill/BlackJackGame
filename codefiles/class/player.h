@@ -14,7 +14,7 @@ class player {
 
     //puts a card into a hand
     void toHand(card x) {
-        if (x.getVal() == x.getAltVal()) {
+        if (x.getVal() != x.getAltVal()) {
             hasAce=True;
         }
         playerCards[cards] = x;
