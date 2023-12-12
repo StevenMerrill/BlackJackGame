@@ -78,8 +78,15 @@ class player {
     void setCardI(int i, card toSet){
         playerCards[i]=toSet;
     }
-    void newGame(){
-        fill(playerCards[0], playerCards[10], NULL);
+    void resetCards(){
+        value = 0;
+        cards=0;
+        hasAce = false;
+
+        for (int i = 0; i < 11; ++i) {
+            playerCards[i] = card(); 
+        }
+        
     }
     protected:
     
