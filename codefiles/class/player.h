@@ -12,16 +12,36 @@ class player {
         return pName;
     }
 
-    bool checkBust(bool ace) {
-        //logic for ace
-        if (ace) {
-            
+    //puts a card into a hand
+    void toHand(card x) {
+        if (x.getVal() == x.getAltVal()) {
+            hasAce=True;
         }
-        //compare cards to 21
-        else if (cards>21) {
+        playerCards[cards] = x;
+        cards++;
+        checkBust();
+        value += x.getVal();
+    }
+
+    //checks for a bust
+    bool checkBust() {
+        if (value>21) {
             cout<< "You have busted!"<<endl;
             return True;
-        } else return False;
+        } else {
+            return False;
+        }
+    }
+
+    //returns the greatest value under 21
+    int checkValue() {
+        if (!hasAce) {
+            return value;
+        } else if (value + 10 <= 21) {
+            return value +10;
+        } else {
+            return value;
+        }
     }
 
     int getOrder(){
@@ -60,12 +80,14 @@ class player {
     }
     protected:
     
-    int cards; //value of total cards
+    int value; //value of total cards
+    int cards; //number of cards
     int order; //order the player goes in; does not matter for 1 player
     string pName; //name of player
     bool playing=false; //if player is playing or not
     bool bust=false; //if player has bust or not
     card playerCards[11]; //array for the players hand
+    bool hasAce=false; //determines if player has an ace
     
     
     private:
