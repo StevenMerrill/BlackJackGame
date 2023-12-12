@@ -16,6 +16,10 @@ class player {
         //logic for ace
 
         //compare cards to 21
+        else if (cards>21) {
+            cout<< "You have busted!"<<endl;
+            return True;
+        } else return False;
     }
 
     int getOrder(){
