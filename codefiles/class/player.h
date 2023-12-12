@@ -60,12 +60,12 @@ class player {
     }
     protected:
     
-    int cards;
-    int order;
-    string pName;
-    bool playing=false;
-    bool bust=false;
-    card playerCards[11];
+    int cards; //value of total cards
+    int order; //order the player goes in; does not matter for 1 player
+    string pName; //name of player
+    bool playing=false; //if player is playing or not
+    bool bust=false; //if player has bust or not
+    card playerCards[11]; //array for the players hand
     
     
     private:
