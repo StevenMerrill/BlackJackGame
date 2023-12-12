@@ -15,7 +15,7 @@ class player {
     //puts a card into a hand
     void toHand(card x) {
         if (x.getVal() != x.getAltVal()) {
-            hasAce=True;
+            hasAce=true;
         }
         playerCards[cards] = x;
         cards++;
@@ -27,9 +27,9 @@ class player {
     bool checkBust() {
         if (value>21) {
             cout<< "You have busted!"<<endl;
-            return True;
+            return true;
         } else {
-            return False;
+            return false;
         }
     }
 
@@ -77,6 +77,8 @@ class player {
     }
     void setCardI(int i, card toSet){
         playerCards[i]=toSet;
+    }
+    void newGame(){card playerCards[11];
     }
     protected:
     
