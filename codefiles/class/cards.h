@@ -1,5 +1,7 @@
 #include <iostream>
 
+include namespace std;
+
 class card {
     public:
 
