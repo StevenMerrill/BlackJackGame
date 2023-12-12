@@ -14,7 +14,9 @@ class player {
 
     bool checkBust(bool ace) {
         //logic for ace
-
+        if (ace) {
+            
+        }
         //compare cards to 21
         else if (cards>21) {
             cout<< "You have busted!"<<endl;
