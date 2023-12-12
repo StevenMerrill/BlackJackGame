@@ -45,9 +45,3 @@ class card {
     private:
 };
 
-
-int main()
-{
-    /*card ace(1,11,"ace","clubs");
-    cout<<ace.getAltVal();*/
-}
