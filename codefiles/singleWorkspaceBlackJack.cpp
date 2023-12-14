@@ -343,6 +343,9 @@ int main(){
                     player1.toHand((Deck1.draw()));
                     cout<<"You drew a "<<(player1.getCardI(player1.getCardsNum()-1)).getName()<<" of "<<(player1.getCardI(player1.getCardsNum()-1)).getSuit()<<" with a value of "<<(player1.getCardI(player1.getCardsNum()-1)).getVal()<<endl;
                     cout<<"Your new value is "<<to_string(player1.checkValue())<<endl;
+                    if(player1.checkValue())==21){
+                        cout<<"\nThats Blackjack! Time to see what the dealer drew!");
+                        break;
                     if(player1.checkBust()){
                         player1.setBust(true);
                         break;
